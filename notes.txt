@@ -1,0 +1,993 @@
+[Barracks]
+
+militia-line (Original: militiaman-line)
+spearman-line
+eagle-scout-line (Original: eagle-warrior-line)
+condottiero
+barracks-huskarl
+barracks-elite-huskarl
+
+[Archery Range]
+
+archer-line
+skirmisher-line
+cavalry-archer-line
+hand-cannoneer
+genitour-line (Original: genitour-placeholder)
+slinger
+
+[Stable]
+
+scout-cavalry-line
+knight-line
+camel-line
+battle-elephant-line
+steppe-lancer-line
+stable-tarkan
+stable-elite-tarkan
+
+[Siege Workshop]
+
+battering-ram-line
+mangonel-line
+scorpion-line
+bombard-cannon
+houfnice
+siege-tower
+
+[Monastery]
+
+monk
+missionary
+
+[Castle]
+
+jaguar-warrior-line (Original: jaguar-man-line)
+camel-archer-line
+hussite-wagon-line
+longbowman-line
+konnik-line
+coustillier-line
+arambai-line
+cataphract-line
+woad-raider-line
+chu-ko-nu-line
+kipchak-line
+shotel-warrior-line
+throwing-axeman-line
+huskarl-line
+tarkan-line
+kamayuk-line
+elephant-archer-line
+genoese-crossbowman-line
+samurai-line
+ballista-elephant-line
+war-wagon-line
+leitis-line
+magyar-huszar-line
+karambit-warrior-line
+gbeto-line
+plumed-archer-line
+mangudai-line
+war-elephant-line
+obuch-line
+organ-gun-line
+mameluke-line
+serjeant-line
+boyar-line
+conquistador-line
+keshik-line
+teutonic-knight-line
+janissary-line
+rattan-archer-line
+berserk-line
+
+free-kipchak
+konnik-dismounted
+elite-konnik-dismounted
+
+petard
+trebuchet
+
+[Dock]
+
+galley-line
+fire-galley-line (Original: fire-ship-line)
+demolition-raft-line (Original: demolition-ship-line)
+cannon-galleon-line
+longboat-line
+turtle-ship-line
+caravel-line
+
+[Town Center]
+
+villager
+flemish-militia
+
+[Donjon]
+
+donjon-serjeant
+
+[Krepost]
+
+krepost-konnik
+
+[Buildings]
+
+archery-range
+barracks
+blacksmith
+bombard-tower
+castle
+dock
+donjon
+farm
+feitoria
+fish-trap
+gate
+guard-tower
+house
+keep
+krepost
+lumber-camp
+market
+mill
+mining-camp
+monastery
+outpost
+siege-workshop
+stable
+town-center
+university
+watch-tower
+wonder
+stone-wall-line
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[TEMPLATE]
+
+(defrule
+	(can-train YYY)
+	(or (players-unit-type-count any-enemy XXX >= 25)
+		(or (players-unit-type-count any-enemy XXX >= 25)
+			(or (players-unit-type-count any-enemy XXX >= 25)
+				(or (players-unit-type-count any-enemy XXX >= 25)
+					(or (players-unit-type-count any-enemy XXX >= 25)
+						(or (players-unit-type-count any-enemy XXX >= 25)
+							(or (players-unit-type-count any-enemy XXX >= 25)
+								(or (players-unit-type-count any-enemy XXX >= 25)
+									(or (players-unit-type-count any-enemy XXX >= 25)
+										(or (players-unit-type-count any-enemy XXX >= 25)
+											(or (players-unit-type-count any-enemy XXX >= 25)
+												(or (players-unit-type-count any-enemy XXX >= 25)
+													(or (players-unit-type-count any-enemy XXX >= 25)
+														(or (players-unit-type-count any-enemy XXX >= 25)
+															(players-unit-type-count any-enemy XXX >= 25)
+														)
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	=>
+	(train YYY)
+)
+
+(defrule
+	(can-train YYY)
+	(or (players-building-type-count any-enemy XXX >= 1)
+		(or (players-building-type-count any-enemy XXX >= 1)
+			(or (players-building-type-count any-enemy XXX >= 1)
+				(or (players-building-type-count any-enemy XXX >= 1)
+					(or (players-building-type-count any-enemy XXX >= 1)
+						(or (players-building-type-count any-enemy XXX >= 1)
+							(or (players-building-type-count any-enemy XXX >= 1)
+								(or (players-building-type-count any-enemy XXX >= 1)
+									(or (players-building-type-count any-enemy XXX >= 1)
+										(or (players-building-type-count any-enemy XXX >= 1)
+											(or (players-building-type-count any-enemy XXX >= 1)
+												(or (players-building-type-count any-enemy XXX >= 1)
+													(or (players-building-type-count any-enemy XXX >= 1)
+														(or (players-building-type-count any-enemy XXX >= 1)
+															(players-building-type-count any-enemy XXX >= 1)
+														)
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	=>
+	(train YYY)
+)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Types]
+
+Infantry
+Close Range
+Militia
+Spearmen
+Non-Ranged
+
+Archers
+Skirmishers
+Long Range
+Ranged
+Cavalry Archers
+
+Cavalry
+Elephants
+Scouting
+Camel Riders
+Camels
+Mounted
+
+Siege
+Minimum Range
+Garrisonable
+Area of Effect
+Group of Units
+Multihit
+Attack Ground
+Scorpions
+Mangonels
+Rams
+
+Galleies
+Demolition Raft
+Fire Ships
+Warships
+
+Monks
+Conversion
+
+Civilian
+
+Buildings
+
+Scouts
+Scouting
+Raiding
+All Purpose
+Self Destruct
+Other Units?
+Gunpowder
+Unique
+Anti-Cavalry
+Anti-Archer
+Anti-Infantry
+Anti-Gunpowder
+Anti-Building
+Anti-Unit
+Slow
+Fast
+Conversion Resistance
+Ranged Resistance
+Melee Resistance
+Dismountable
+Gold Generation
+Ranged Melee
+Cheap
+Half Population
+Half Damage
+Heals
+Regeneration
+Armor Break
+Ignores Armor
+Packable
+Tree Destroyer
+Land Units
+Armored
+Gathers
+Builds
+Repairs
+Charge Attack
+Trample
+Multiple Arrows
+Multiple Projectiles
+Rapid Fire
+Fast Training
+Fast Attack
+Stone (Walls/Towers/Gates)
+
+Not Specified
+
+Nothing
+
+[Barracks]
+
+militia-line           (Strong: Buildings, Infantry) (Weak: Archers, Long Range) (Note: All Purpose, Close Range, Infantry)
+spearman-line          (Strong: Mounted, Elephants)  (Weak: Archers, Infantry)   (Note: Anti-Cavalry, Close Range, Infantry)
+eagle-scout-line       (Strong: Monks, Archers)      (Weak: Militia, Cavalry)    (Note: Conversion Resistance, Scouting, Raiding, Fast, Close Range, Infantry)
+condottiero            (Strong: Gunpowder)           (Weak: Cavalry, Archers)    (Note: Unique, Fast, Anti-Gunpowder, Close Range, Infantry)
+barracks-huskarl       (Strong: Archers, Buildings)  (Weak: Cavalry)             (Note: Unique, Ranged Resistance, Close Range, Infantry)
+barracks-elite-huskarl (Strong: Archers, Buildings)  (Weak: Cavalry)             (Note: Unique, Ranged Resistance, Close Range, Infantry)
+
+[Archery Range]
+
+archer-line         (Strong: Long Range)       (Weak: Skirmishers, Close Range) (Note: Ranged, Archers)
+skirmisher-line     (Strong: Archers)          (Weak: Close Range)              (Note: Anti-Archer, Ranged, Minimum Range, Archers)
+cavalry-archer-line (Strong: Slow, Long Range) (Weak: Skirmishers, Close Range) (Note: Mounted, Ranged, Cavalry Archers)
+hand-cannoneer      (Strong: Infantry)         (Weak: Skirmishers, Archers)     (Note: Gunpowder, Ranged, Archers)
+genitour-line       (Strong: Archers)          (Weak: Close Range)              (Note: Unique, Mounted, Skirmishers, Ranged, Cavalry Archers)
+slinger             (Strong: Infantry)         (Weak: Archers, Cavalry)         (Note: Unique, Ranged, Anti-Infantry, Minimum Range, Archers)
+
+[Stable]
+
+scout-cavalry-line   (Strong: Monks)                      (Weak: Spearmen, Camels Riders)        (Note: Fast, Mounted, Scouting, Raiding, Conversion Resistance, Cavalry)
+knight-line          (Strong: Infantry, Archers)          (Weak: Spearmen, Camels Riders, Monks) (Note: All Purpose, Mounted, Cavalry)
+camel-line           (Strong: Cavalry)                    (Weak: Spearmen, Monks, Archers)       (Note: Fast, Anti-Cavalry, Mounted, Camels, Cavalry)
+battle-elephant-line (Strong: Cavalry, Infantry, Archers) (Weak: Monks, Spearmen)                (Note: Slow, Mounted, Elephants, Cavalry)
+steppe-lancer-line   (Strong: Group of Units)             (Weak: Camels Riders, Archers)         (Note: Mounted, Ranged Melee, Cavalry)
+stable-tarkan        (Strong: Buildings, Archers)         (Weak: Spearmen, Camels Riders)        (Note: Unique, Anti-Building, Mounted, Cavalry)
+stable-elite-tarkan  (Strong: Buildings, Archers)         (Weak: Spearmen, Camels Riders)        (Note: Unique, Anti-Building, Mounted, Cavalry)
+
+[Siege Workshop]
+
+battering-ram-line (Strong: Buildings)        (Weak: Not Specified, * Close Range, * Siege)  (Note: Anti-Building, Ranged Resistance, Garrisonable, Siege)
+mangonel-line      (Strong: Group of Units)   (Weak: Not Specified, * Nothing)               (Note: Ranged, Minimum Range, Area of Effect, Tree Destroyer, Attack Ground, Siege)
+scorpion-line      (Strong: Group of Units)   (Weak: Cavalry, Siege)                         (Note: Ranged, Anti-Unit, Multihit, Siege)
+bombard-cannon     (Strong: Buildings, Siege) (Weak: Close Range)                            (Note: Long Range, Ranged, Anti-Building, Attack Ground, Siege)
+houfnice           (Strong: Buildings, Siege) (Weak: Close Range)                            (Note: Unique, Long Range, Ranged, Anti-Building, Attack Ground, Siege)
+siege-tower        (Strong: Walls)            (Weak: Not Specified, * Close Range)           (Note: Garrisonable, Ranged Resistance, Siege)
+
+[Monastery]
+
+monk       (Strong: Slow, Non-Ranged) (Weak: Scouts, Ranged) (Note: Conversion, Heals, Monks)
+missionary (Strong: Slow, Non-Ranged) (Weak: Scouts, Ranged) (Note: Unique, Conversion, Heals, Monks)
+
+[Castle]
+
+jaguar-warrior-line      (Strong: Infantry)                                     (Weak: Cavalry, Archers)                    (Note: Unique, Infantry)
+camel-archer-line        (Strong: Cavalry Archers, Infantry)                    (Weak: Spearmen, Skirmishers, Camel Riders) (Note: Unique, Mounted, Cavalry Archer)
+hussite-wagon-line       (Strong: Archers)                                      (Weak: Siege)                               (Note: Unique, Half Damage, Siege)
+longbowman-line          (Strong: Infantry)                                     (Weak: Cavalry, Skirmishers)                (Note: Unique, Ranged, Long Range, Archers)
+konnik-line              (Strong: Infantry, Archers)                            (Weak: Camel Riders, Monks)                 (Note: Unique, Dismountable, Cavalry)
+coustillier-line         (Strong: Infantry, Achers)                             (Weak: Camel Riders, Monks)                 (Note: Unique, Charge Attack, Cavalry)
+arambai-line             (Strong: Infantry, Cavalry)                            (Weak: Archers)                             (Note: Unique, Cavalry Archer)
+cataphract-line          (Strong: Infantry)                                     (Weak: Archers)                             (Note: Unique, Cavalry)
+woad-raider-line         (Strong: Infantry, Siege)                              (Weak: Archers, Cavalry)                    (Note: Unique, Fast, Infantry)
+chu-ko-nu-line           (Strong: Infantry)                                     (Weak: Archers, Siege)                      (Note: Unique, Multiple Arrows, Archer)
+kipchak-line             (Strong: Infantry)                                     (Weak: Skirmishers)                         (Note: Unique, Rapid Fire, Cavalry Archer)
+shotel-warrior-line      (Strong: Infantry)                                     (Weak: Archers)                             (Note: Unique, Fast, Fast Training, Infantry)
+throwing-axeman-line     (Strong: Infantry)                                     (Weak: Archers, Siege)                      (Note: Unique, Ranged Melee, Infantry)
+huskarl-line             (Strong: Archers, Buildings)                           (Weak: Cavalry)                             (Note: Unique, Ranged Resistance, Infantry)
+tarkan-line              (Strong: Buildings, Archers)                           (Weak: Spearmen, Camel Riders)              (Note: Unique, Cavalry)
+kamayuk-line             (Strong: Cavalry, Infantry)                            (Weak: Archers)                             (Note: Unique, Ranged Melee, Spearmen, Infantry)
+elephant-archer-line     (Strong: Archers, Infantry)                            (Weak: Spearmen, Skirmishers, Camel Riders) (Note: Unique, Mounted, Elephant, Archer, Cavalry)
+genoese-crossbowman-line (Strong: Cavalry, Infantry)                            (Weak: Archers, Siege)                      (Note: Unique, Archer)
+samurai-line             (Strong: Unique, Infantry)                             (Weak: Archers)                             (Note: Unique, Fast, Attack, Infantry)
+ballista-elephant-line   (Strong: Infantry, Archers)                            (Weak: Cavalry, Siege)                      (Note: Unique, Tree Destroyer, Multihit, Multiple Arrows, Mounted, Elephant, Cavalry, Siege)
+war-wagon-line           (Strong: Infantry, Archers)                            (Weak: Spearmen, Skirmishers, Camel Riders) (Note: Unique, Cavalry Archer, Multihit, Siege)
+leitis-line              (Strong: Armored)                                      (Weak: Not Specified, * Nothing)            (Note: Unique, Ignores Armor, Cavalry)
+magyar-huszar-line       (Strong: Siege)                                        (Weak: Spearmen, Camel Riders)              (Note: Unique, Scouts, Cavalry)
+karambit-warrior-line    (Strong: Group of Units)                               (Weak: Cavalry, Archers)                    (Note: Unique, Cheap, Half Population, Infantry)
+gbeto-line               (Strong: Infantry)                                     (Weak: Archers, Siege)                      (Note: Unique, Fast, Ranged Melee, Infantry)
+plumed-archer-line       (Strong: Archers, Infantry)                            (Weak: Cavalry)                             (Note: Unique, Fast, Archer)
+mangudai-line            (Strong: Siege, Infantry)                              (Weak: Spearmen, Skirmishers, Camel Riders) (Note: Unique, Rapid Fire, Cavalry Archers)
+war-elephant-line        (Strong: Buildings, Close Range)                       (Weak: Monks)                               (Note: Unique, Slow, Elephant, Cavalry)
+obuch-line               (Strong: Buildings, Infantry)                          (Weak: Archers, Long Range)                 (Note: Unique, Armor Break, Infantry)
+organ-gun-line           (Strong: Group of Units)                               (Weak: Cavalry, Mangonels)                  (Note: Unique, Multiple Projectiles, Siege)
+mameluke-line            (Strong: Cavalry)                                      (Weak: Archers, Spearmen)                   (Note: Unique, Camel Rider, Ranged Melee, Mounted, Cavalry)
+serjeant-line            (Strong: Not Specified, * Eagle Warriors, * Buildings) (Weak: Not Specified, * Nothing)            (Note: Unique, Builds, Infantry)
+boyar-line               (Strong: Not Specified, * Nothing)                     (Weak: Not Specified, * Nothing)            (Note: Unique, Melee Resistance, Cavalry)
+conquistador-line        (Strong: Infantry)                                     (Weak: Spearmen, Skirmishers, Monks)        (Note: Unique, Gunpowder, Mounted, Cavalry)
+keshik-line              (Strong: Not Specified, * Nothing)                     (Weak: Not Specified, * Nothing)            (Note: Unique, Gold Generation, Cavalry)
+teutonic-knight-line     (Strong: Close Range)                                  (Weak: Archers, Scorpions)                  (Note: Unique, Slow, Infantry)
+janissary-line           (Strong: Infantry)                                     (Weak: Archers)                             (Note: Unique, Gunpowder, Long Range, Archers)
+rattan-archer-line       (Strong: Archers, Infantry)                            (Weak: Cavalry, Skirmishers)                (Note: Unique, Ranged Resistance, Archers)
+berserk-line             (Strong: Infantry, Siege)                              (Weak: Archers)                             (Note: Unique, Regeneration, Infantry)
+
+free-kipchak        (Strong: Infantry) (Weak: Skirmishers) (Note: Unique, Rapid Fire, Cavalry Archer)
+
+konnik-dismounted       (Strong: Not Specified, * Buildings) (Weak: Not Specified, * Nothing) (Note: Unique, Infantry)
+elite-konnik-dismounted (Strong: Not Specified)              (Weak: Not Specified, * Nothing) (Note: Unique, Infantry)
+
+petard        (Strong: Buildings) (Weak: Other Units?)             (Note: Anti-Building, Self Destruct, Siege)
+flaming-camel (Strong: Cavalry)   (Weak: )                         (Note: Unique, Self Destruct)
+trebuchet     (Strong: Buildings) (Weak: Not Specified, * Nothing) (Note: Anti-Building, Long Range, Packable, Minimum Range, Attack Ground, Tree Destroyer, Siege)
+
+[Dock]
+
+galley-line          (Strong: Not Specified, * Buildings, * Warships, * Camels, * Rams) (Weak: Fire Galley)                (Note: All-Purpose, Ranged, Warships)
+fire-galley-line     (Strong: Galley)                                                   (Weak: Demolition Ship)            (Note: Close Range, Warships)
+demolition-raft-line (Strong: Fire Galley, Buildings)                                   (Weak: Not Specified, * Nothing)   (Note: Self Destruct, Warships)
+cannon-galleon-line  (Strong: Buildings)                                                (Weak: Other Units?)               (Note: Anti-Building, Attack Ground, Siege, Long Range, Minimum Range, Warships)
+longboat-line        (Strong: Galley, Land Units, Buildings)                            (Weak: Not Specified, * Nothing)   (Note: Unique, Multiple Arrows, Warships)
+turtle-ship-line     (Strong: Warships, Buildings)                                      (Weak: Not Specified, * Nothing)   (Note: Unique, Slow, Armored, Anti-Building, Warships)
+caravel-line         (Strong: Group of Units)                                           (Weak: Fire Galley)                (Note: Unique, Multihit, Warships)
+
+[town-center]
+
+villager        (Strong: Not Specified, * Buildings, * Stone, ) (Weak: Not Specified, * Nothing) (Note: Civilian)
+flemish-militia (Strong: Cavalry)                               (Weak: Archers)                  (Note: Unique, Infantry)
+
+[donjon]
+
+donjon-serjeant (Strong: Not Specified, * Eagle Warriors, * Buildings) (Weak: Not Specified, * Nothing) (Note: Unique, Builds, Infantry)
+
+[krepost]
+
+krepost-konnik (Strong: Infantry, Archers) (Weak: Camel Riders, Monks) (Note: Unique, Dismountable, Cavalry)
+
+* If there is nothing specified, I will look it up in AGE.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+; highest to lowest
+
+; note: I noticed that this effects the ai the most. Time for some experimenting...
+
+; let's try to target buildings first. In case of wonders or relics.
+; let's come up with a multiplier system that is doubled. Might help target things better...
+
+; multiplier range...
+
+; 32768 - highest
+; 16384
+; 8192
+; 4096 
+; 2048
+; 1024
+; 512
+; 256
+; 128 - medium
+; 64
+; 32
+; 16
+; 8
+; 4
+; 2
+; 1 
+; 0 - lowest
+
+; |highest|
+
+; (set-strategic-number sn-target-evaluation-hitpoints 32768)
+; (set-strategic-number sn-target-evaluation-distance 16384)
+; (set-strategic-number sn-target-evaluation-damage-capability 8192)
+; (set-strategic-number sn-target-evaluation-rof 4096)
+; (set-strategic-number sn-target-evaluation-range 2048)
+; (set-strategic-number sn-target-evaluation-siege-weapon 1024)
+
+; |moderate|
+
+; (set-strategic-number sn-target-evaluation-ally-proximity 512)
+; (set-strategic-number sn-target-evaluation-time-kill-ratio 256)
+; (set-strategic-number sn-target-evaluation-kills 128)
+; (set-strategic-number sn-target-evaluation-in-progress 64)
+; (set-strategic-number sn-target-evaluation-continent 32)
+
+; |lowest|
+
+; (set-strategic-number sn-target-evaluation-attack-attempts 16)
+; (set-strategic-number sn-target-evaluation-boat 8)
+; (set-strategic-number sn-target-evaluation-randomness 4)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This information comes from TS...
+
+(Note: zero based. Subtract 1 as needed.)
+
+Map size     Tiny    Small   Medium  Normal  Large   Giant   LudiKRIS
+Dimensions   120×120 144×144 168×168 200×200 220×220 240×240 480×480
+Tiles        14400   20736   28224   40000   48400   57600   230400
+
+Max: 119 143 167 199 219 239 479
+
+Center       59,59   71,71   83,83   99,99   109,109 119,119 239,239
+
+Left         0,0     0,0     0,0     0,0     0,0     0,0     0,0
+Right        119,119 143,143 167,167 199,199 219,219 239,239 479,479
+Top          0,119   0,143   0,167   0,199   0,219   0,239   0,479
+Bottom       119,0   143,0   167,0   199,0   219,0   239,0   479,0
+
+Half: 59 71 83 99 109 119 239
+
+Left-Top     0,59   0,71   0,83   0,99   0,109    0,119    0,239
+Right-Top    59,119 71,143 83,167 99,199 109,219  119,239  239,479
+Bottom-Right 119,59 143,71 167,83 199,99 219,109  239,119  479,239
+Bottom-Left  59,0   71,0   83,0   99,0   109,0    119,0    239,0
+
+Quarter: 29 35 41 49 54 59 119
+
+Center-Top    30,88   36,106  42,124  50,148  55,163  60,178  120,358
+Center-Right  88,88   106,106 124,124 148,148 163,163 178,178 358,358
+Center-Bottom 88,30   106,36  124,42  148,50  163,55  178,60  358,120
+Center-Left   30,30   36,36   42,42   50,50   55,55   60,60   120,120
+
+Center-Left-Top     29,59  35,71  41,83  49,99  54,109   59,119   119,239
+Center-Top-Right    59,90  71,108 83,126 99,150 109,165  119,180  239,360
+Center-Right-Bottom 90,59  108,71 126,83 150,99 165,109  180,119  360,239
+Center-Bottom-Left  59,29  71,35  83,41  99,49  109,54   119,59   239,119
+
+
+(The 'map square' is rotated clockwise by 45 degrees and Y is scaled by half.)
+
+     X 
+ 2 +---+ 3
+ Y |   | Y
+ 1 +---+ 4
+     X
+
+What it actually looks like in DE...
+
+        Y 
+119,0 +---+ 119,119
+    X |   | X
+  0,0 +---+ 0,119
+        Y
+
+1: BottomLeft (0, 0) (x1 y1)
+2: TopLeft (0, Size) (x1 y2)
+3: TopRight (Size, Size) (x2 y2)
+4: BottomRight (Size, 0) (x2 y1)
+
+becomes... (Not exactly to scale but, you get the idea...)
+
+      2
+      +
+  Y /   \ X
+1 +       + 3
+  X \   / Y
+      +
+      4
+
+It would look something like this... (Roughly. Not to scale.)
+
+           X
+T +-----------------+ R
+  |3   i   g   j   4|
+  |p   6   b   7   k|
+Y |h   a   1   c   f| Y
+  |o   9   d   8   l|
+  |2   n   e   m   5|
+L +-----------------+ B
+           X
+		   
+1: Left (0, 0) (x1 y1)
+2: Top (0, Size) (x1 y2)
+3: Right (Size, Size) (x2 y2)
+4: Bottom (Size, 0) (x2 y1)
+
+Center: 1
+
+Bottom: 5
+Top:    3
+Right:  4
+Left:   2
+
+Bottom-Left: e
+Bottom-Right: f
+Right-Top: g
+Left-Top: h
+
+Center-Left: 9
+Center-Bottom: 8
+Center-Right: 7
+Center-Top: 6
+
+Center-Bottom-Left: d
+Center-Right-Bottom: c
+Center-Top-Right: b
+Center-Left-Top: a
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+; Note: X = Y and Y = X for some reason. (Top/Bottom are inverted.) I fixed the values though for all of them.
+
+; tiny validated
+
+(defconst v-tiny-center-x 59)
+(defconst v-tiny-center-y 59)
+(defconst v-small-center-x 71)
+(defconst v-small-center-y 71)
+(defconst v-medium-center-x 83)
+(defconst v-medium-center-y 83)
+(defconst v-normal-center-x 99)
+(defconst v-normal-center-y 99)
+(defconst v-large-center-x 109)
+(defconst v-large-center-y 109)
+(defconst v-giant-center-x 119)
+(defconst v-giant-center-y 119)
+(defconst v-ludikris-center-x 239)
+(defconst v-ludikris-center-y 239)
+
+; tiny validated
+
+(defconst v-tiny-left-x 0)
+(defconst v-tiny-left-y 0)
+(defconst v-small-left-x 0)
+(defconst v-small-left-y 0)
+(defconst v-medium-left-x 0)
+(defconst v-medium-left-y 0)
+(defconst v-normal-left-x 0)
+(defconst v-normal-left-y 0)
+(defconst v-large-left-x 0)
+(defconst v-large-left-y 0)
+(defconst v-giant-left-x 0)
+(defconst v-giant-left-y 0)
+(defconst v-ludikris-left-x 0)
+(defconst v-ludikris-left-y 0)
+
+; all validated
+
+(defconst v-tiny-right-x 119)
+(defconst v-tiny-right-y 119)
+(defconst v-small-right-x 143)
+(defconst v-small-right-y 143)
+(defconst v-medium-right-x 167)
+(defconst v-medium-right-y 167)
+(defconst v-normal-right-x 199)
+(defconst v-normal-right-y 199)
+(defconst v-large-right-x 219)
+(defconst v-large-right-y 219)
+(defconst v-giant-right-x 239)
+(defconst v-giant-right-y 239)
+(defconst v-ludikris-right-x 479)
+(defconst v-ludikris-right-y 479)
+
+; tiny validated
+
+(defconst v-tiny-top-x 119)
+(defconst v-tiny-top-y 0)
+(defconst v-small-top-x 143)
+(defconst v-small-top-y 0)
+(defconst v-medium-top-x 167)
+(defconst v-medium-top-y 0)
+(defconst v-normal-top-x 199)
+(defconst v-normal-top-y 0)
+(defconst v-large-top-x 219)
+(defconst v-large-top-y 0)
+(defconst v-giant-top-x 239)
+(defconst v-giant-top-y 0)
+(defconst v-ludikris-top-x 479)
+(defconst v-ludikris-top-y 0)
+
+; tiny validated
+
+(defconst v-tiny-bottom-x 0)
+(defconst v-tiny-bottom-y 119)
+(defconst v-small-bottom-x 0)
+(defconst v-small-bottom-y 143)
+(defconst v-medium-bottom-x 0)
+(defconst v-medium-bottom-y 167)
+(defconst v-normal-bottom-x 0)
+(defconst v-normal-bottom-y 199)
+(defconst v-large-bottom-x 0)
+(defconst v-large-bottom-y 219)
+(defconst v-giant-bottom-x 0)
+(defconst v-giant-bottom-y 239)
+(defconst v-ludikris-bottom-x 0)
+(defconst v-ludikris-bottom-y 479)
+
+; tiny validated
+
+(defconst v-tiny-top-left-x 59)
+(defconst v-tiny-top-left-y 0)
+(defconst v-small-top-left-x 71)
+(defconst v-small-top-left-y 0)
+(defconst v-medium-top-left-x 83)
+(defconst v-medium-top-left-y 0)
+(defconst v-normal-top-left-x 99)
+(defconst v-normal-top-left-y 0)
+(defconst v-large-top-left-x 109)
+(defconst v-large-top-left-y 0)
+(defconst v-giant-top-left-x 119)
+(defconst v-giant-top-left-y 0)
+(defconst v-ludikris-top-left-x 239)
+(defconst v-ludikris-top-left-y 0)
+
+; tiny validated
+
+(defconst v-tiny-top-right-x 119)
+(defconst v-tiny-top-right-y 59)
+(defconst v-small-top-right-x 143)
+(defconst v-small-top-right-y 71)
+(defconst v-medium-top-right-x 167)
+(defconst v-medium-top-right-y 83)
+(defconst v-normal-top-right-x 199)
+(defconst v-normal-top-right-y 99)
+(defconst v-large-top-right-x 219)
+(defconst v-large-top-right-y 109)
+(defconst v-giant-top-right-x 239)
+(defconst v-giant-top-right-y 119)
+(defconst v-ludikris-top-right-x 479)
+(defconst v-ludikris-top-right-y 239)
+
+; tiny validated
+
+(defconst v-tiny-bottom-left-x 0)
+(defconst v-tiny-bottom-left-y 59)
+(defconst v-small-bottom-left-x 0)
+(defconst v-small-bottom-left-y 71)
+(defconst v-medium-bottom-left-x 0)
+(defconst v-medium-bottom-left-y 83)
+(defconst v-normal-bottom-left-x 0)
+(defconst v-normal-bottom-left-y 99)
+(defconst v-large-bottom-left-x 0)
+(defconst v-large-bottom-left-y 109)
+(defconst v-giant-bottom-left-x 0)
+(defconst v-giant-bottom-left-y 119)
+(defconst v-ludikris-bottom-left-x 0)
+(defconst v-ludikris-bottom-left-y 239)
+
+; tiny validated
+
+(defconst v-tiny-bottom-right-x 59)
+(defconst v-tiny-bottom-right-y 119)
+(defconst v-small-bottom-right-x 71)
+(defconst v-small-bottom-right-y 143)
+(defconst v-medium-bottom-right-x 83)
+(defconst v-medium-bottom-right-y 167)
+(defconst v-normal-bottom-right-x 99)
+(defconst v-normal-bottom-right-y 199)
+(defconst v-large-bottom-right-x 109)
+(defconst v-large-bottom-right-y 219)
+(defconst v-giant-bottom-right-x 119)
+(defconst v-giant-bottom-right-y 239)
+(defconst v-ludikris-bottom-right-x 239)
+(defconst v-ludikris-bottom-right-y 479)
+
+; tiny validated
+
+(defconst v-tiny-left-center-x 30)
+(defconst v-tiny-left-center-y 30)
+(defconst v-small-left-center-x 36)
+(defconst v-small-left-center-y 36)
+(defconst v-medium-left-center-x 42)
+(defconst v-medium-left-center-y 42)
+(defconst v-normal-left-center-x 50)
+(defconst v-normal-left-center-y 50)
+(defconst v-large-left-center-x 55)
+(defconst v-large-left-center-y 55)
+(defconst v-giant-left-center-x 60)
+(defconst v-giant-left-center-y 60)
+(defconst v-ludikris-left-center-x 120)
+(defconst v-ludikris-left-center-y 120)
+
+; tiny validated
+
+(defconst v-tiny-right-center-x 88)
+(defconst v-tiny-right-center-y 88)
+(defconst v-small-right-center-x 106)
+(defconst v-small-right-center-y 106)
+(defconst v-medium-right-center-x 124)
+(defconst v-medium-right-center-y 124)
+(defconst v-normal-right-center-x 148)
+(defconst v-normal-right-center-y 148)
+(defconst v-large-right-center-x 163)
+(defconst v-large-right-center-y 163)
+(defconst v-giant-right-center-x 178)
+(defconst v-giant-right-center-y 178)
+(defconst v-ludikris-right-center-x 358)
+(defconst v-ludikris-right-center-y 358)
+
+; tiny validated
+
+(defconst v-tiny-top-center-x 88)
+(defconst v-tiny-top-center-y 30)
+(defconst v-small-top-center-x 106)
+(defconst v-small-top-center-y 36)
+(defconst v-medium-top-center-x 124)
+(defconst v-medium-top-center-y 42)
+(defconst v-normal-top-center-x 148)
+(defconst v-normal-top-center-y 50)
+(defconst v-large-top-center-x 163)
+(defconst v-large-top-center-y 55)
+(defconst v-giant-top-center-x 178)
+(defconst v-giant-top-center-y 60)
+(defconst v-ludikris-top-center-x 358)
+(defconst v-ludikris-top-center-y 120)
+
+; tiny validated
+
+(defconst v-tiny-bottom-center-x 30)
+(defconst v-tiny-bottom-center-y 88)
+(defconst v-small-bottom-center-x 36)
+(defconst v-small-bottom-center-y 106)
+(defconst v-medium-bottom-center-x 42)
+(defconst v-medium-bottom-center-y 124)
+(defconst v-normal-bottom-center-x 50)
+(defconst v-normal-bottom-center-y 148)
+(defconst v-large-bottom-center-x 55)
+(defconst v-large-bottom-center-y 163)
+(defconst v-giant-bottom-center-x 60)
+(defconst v-giant-bottom-center-y 178)
+(defconst v-ludikris-bottom-center-x 120)
+(defconst v-ludikris-bottom-center-y 358)
+
+; tiny validated
+
+(defconst v-tiny-center-top-left-x 59)
+(defconst v-tiny-center-top-left-y 29)
+(defconst v-small-center-top-left-x 71)
+(defconst v-small-center-top-left-y 35)
+(defconst v-medium-center-top-left-x 83)
+(defconst v-medium-center-top-left-y 41)
+(defconst v-normal-center-top-left-x 99)
+(defconst v-normal-center-top-left-y 49)
+(defconst v-large-center-top-left-x 109)
+(defconst v-large-center-top-left-y 54)
+(defconst v-giant-center-top-left-x 119)
+(defconst v-giant-center-top-left-y 59)
+(defconst v-ludikris-center-top-left-x 239)
+(defconst v-ludikris-center-top-left-y 119)
+
+; tiny validated
+
+(defconst v-tiny-center-top-right-x 90)
+(defconst v-tiny-center-top-right-y 59)
+(defconst v-small-center-top-right-x 108)
+(defconst v-small-center-top-right-y 71)
+(defconst v-medium-center-top-right-x 126)
+(defconst v-medium-center-top-right-y 83)
+(defconst v-normal-center-top-right-x 150)
+(defconst v-normal-center-top-right-y 99)
+(defconst v-large-center-top-right-x 165)
+(defconst v-large-center-top-right-y 109)
+(defconst v-giant-center-top-right-x 180)
+(defconst v-giant-center-top-right-y 119)
+(defconst v-ludikris-center-top-right-x 360)
+(defconst v-ludikris-center-top-right-y 239)
+
+; tiny validated
+
+(defconst v-tiny-center-bottom-left-x 29)
+(defconst v-tiny-center-bottom-left-y 59)
+(defconst v-small-center-bottom-left-x 35)
+(defconst v-small-center-bottom-left-y 71)
+(defconst v-medium-center-bottom-left-x 41)
+(defconst v-medium-center-bottom-left-y 83)
+(defconst v-normal-center-bottom-left-x 49)
+(defconst v-normal-center-bottom-left-y 99)
+(defconst v-large-center-bottom-left-x 54)
+(defconst v-large-center-bottom-left-y 109)
+(defconst v-giant-center-bottom-left-x 59)
+(defconst v-giant-center-bottom-left-y 119)
+(defconst v-ludikris-center-bottom-left-x 119)
+(defconst v-ludikris-center-bottom-left-y 239)
+
+; tiny validated
+
+(defconst v-tiny-center-bottom-right-x 59)
+(defconst v-tiny-center-bottom-right-y 90)
+(defconst v-small-center-bottom-right-x 71)
+(defconst v-small-center-bottom-right-y 108)
+(defconst v-medium-center-bottom-right-x 83)
+(defconst v-medium-center-bottom-right-y 126)
+(defconst v-normal-center-bottom-right-x 99)
+(defconst v-normal-center-bottom-right-y 150)
+(defconst v-large-center-bottom-right-x 109)
+(defconst v-large-center-bottom-right-y 165)
+(defconst v-giant-center-bottom-right-x 119)
+(defconst v-giant-center-bottom-right-y 180)
+(defconst v-ludikris-center-bottom-right-x 239)
+(defconst v-ludikris-center-bottom-right-y 360)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14400 / 8 = 1800 (42.426406871192851464050661726291) (4.2426406871192851464050661726291)
+20736 / 8 = 2592 (50.911688245431421756860794071549) (5.0911688245431421756860794071549)
+28224 / 8 = 3528 (59.396969619669992049670926416807) (5.9396969619669992049670926416807)
+40000 / 8 = 5000 (70.710678118654752440084436210485) (7.0710678118654752440084436210485)
+57600 / 8 = 7200 (84.852813742385702928101323452582) (8.4852813742385702928101323452582)
+230400 / 8 = 28800 (169.70562748477140585620264690516) (16.970562748477140585620264690516)
+
+(47.800418408210612649497078878287) (4.7800418408210612649497078878287)
+
+Town Size +5 each average should be good.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(up-target-point inGoalPoint inConstTargetAction inConstFormation inConstAttackStance)
+action-patrol
+-1
+stance-aggressive
+
+(up-target-point tiny-center-x action-patrol -1 stance-aggressive)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1   2   3   4   5
+20  40  60  80  100
+
+1   2   3   4
+25  50  75  100
+
+1   2   3
+33  66  100
+
+1   2
+50  100
+
+1
+100
+
+100, 80, 75, 66, 60, 50, 40, 33, 25, 20
+
+; Goal 89: (Random 80, 0 to 1, <= 80)
+; Goal 90: (Random 75, 0 to 1, <= 75)
+; Goal 91: (Random 66, 0 to 1, <= 66)
+; Goal 92: (Random 60, 0 to 1, <= 60)
+; Goal 93: (Random 50, 0 to 1, <= 50)
+; Goal 94: (Random 40, 0 to 1, <= 40)
+; Goal 95: (Random 33, 0 to 1, <= 33)
+; Goal 96: (Random 25, 0 to 1, <= 25)
+; Goal 97: (Random 20, 0 to 1, <= 20)
+
+(goal 89 1) ; 80%
+(goal 90 1) ; 75%
+(goal 91 1) ; 66%
+(goal 92 1) ; 60%
+(goal 93 1) ; 50%
+(goal 94 1) ; 40%
+(goal 95 1) ; 33%
+(goal 96 1) ; 25%
+(goal 97 1) ; 20%
+
+(goal G_UNIT G_TIER) ; Make UNIT (TIER)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Missing ID's for AI]
+
+(defconst ri-kasbah 578)
+(defconst ri-wagenburg-tactics 784)
+(defconst ri-yeomen 3)
+(defconst ri-bearded-axe 83)
+(defconst ri-anarchy 16)
+(defconst ri-marauders 483)
+(defconst ri-eupseong 486)
+(defconst ri-corvinian-army 514)
+(defconst ri-hulche-javelineers 485)
+(defconst ri-kamandaran 488)
+(defconst ri-silk-armor 687)
+
+(defconst ri-garland-wars 24)
+(defconst ri-maghrebi-camels 579)
+(defconst ri-warwolf 461)
+(defconst ri-logistica 61)
+(defconst ri-furor-celtica 5)
+(defconst ri-rocketry 52)
+(defconst ri-torsion-engines 575)
+(defconst ri-perfusion 457)
+(defconst ri-atheism 21)
+(defconst ri-fabric-shields 517)
+(defconst ri-kataparuto 59)
+(defconst ri-shinkichon 445)
+(defconst ri-farimba 577)
+(defconst ri-el-dorado 4)
+(defconst ri-drill 6)
+(defconst ri-mahouts 7)
+(defconst ri-zealotry 9)
+(defconst ri-hauberk 757)
+(defconst ri-supremacy 440)
+(defconst ri-crenellations 11)
+(defconst ri-artillery 10)
+(defconst ri-berserkergang 49)
+
+(defconst jaguar-warrior-line ???) ; jaguar-man-line
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+NEW: sn-allow-serjeant-building which will automatically assign Serjeants to a Donjon foundation instead of villagers if available, if there is no available Serjeants a Villager is chosen instead.
